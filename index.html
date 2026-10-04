@@ -1,0 +1,934 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MySweetheart - Freshly Made for You</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="tailwind-config.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="antialiased overflow-x-hidden">
+    <nav
+      class="fixed w-full z-50 bg-sweet-cream/90 backdrop-blur-md border-b border-sweet-brown/10 transition-all duration-300"
+      id="navbar"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-2 min-h-[5rem]">
+          <!-- Logo -->
+          <div
+            class="flex-shrink-0 flex items-center gap-3 cursor-pointer"
+            onclick="window.scrollTo(0, 0)"
+          >
+            <img
+              class="h-14 md:h-16 w-auto rounded-full shadow-sm object-cover"
+              src="img/logo_mysweet-removebg-preview_2.png"
+              alt="MySweetheart Logo"
+              onerror="
+                this.src =
+                  'https://placehold.co/100x100/5C3A21/F8F5F0?text=Logo'
+              "
+            />
+            <span
+              class="font-serif font-bold text-xl md:text-2xl text-sweet-brown"
+              >MySweetheart</span
+            >
+          </div>
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-8 items-center">
+            <a
+              href="#home"
+              class="text-sweet-dark hover:text-sweet-brown font-medium transition-colors"
+              >Home</a
+            >
+            <a
+              href="#about"
+              class="text-sweet-dark hover:text-sweet-brown font-medium transition-colors"
+              >Tentang Kami</a
+            >
+            <a
+              href="#menu"
+              class="text-sweet-dark hover:text-sweet-brown font-medium transition-colors"
+              >Menu</a
+            >
+            <a
+              href="#testimoni"
+              class="text-sweet-dark hover:text-sweet-brown font-medium transition-colors"
+              >Ulasan</a
+            >
+          </div>
+          <!-- Cart & CS -->
+          <div class="hidden md:flex items-center space-x-4">
+            <button
+              onclick="toggleCart()"
+              class="text-sweet-dark hover:text-sweet-brown relative p-2 transition-colors"
+            >
+              <i class="fas fa-shopping-cart text-2xl"></i>
+              <span
+                id="cart-badge-desktop"
+                class="absolute -top-1 -right-1 bg-sweet-accent text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center hidden shadow-md"
+                >0</span
+              >
+            </button>
+            <a
+              href="https://wa.me/6283894983594?text=Halo%20MySweetheart,%20saya%20mau%20pesan..."
+              target="_blank"
+              class="bg-sweet-brown text-sweet-cream px-6 py-2 rounded-full font-medium hover:bg-sweet-brown/90 transition-all shadow-md flex items-center gap-2"
+            >
+              <i class="fab fa-whatsapp text-lg"></i> Pesan Sekarang
+            </a>
+          </div>
+          <!-- Mobile menu buttons -->
+          <div class="md:hidden flex items-center gap-2">
+            <button
+              onclick="toggleCart()"
+              class="text-sweet-dark hover:text-sweet-brown relative p-2 transition-colors mr-2"
+            >
+              <i class="fas fa-shopping-cart text-xl"></i>
+              <span
+                id="cart-badge-mobile"
+                class="absolute -top-1 -right-1 bg-sweet-accent text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center hidden shadow-sm"
+                >0</span
+              >
+            </button>
+            <button
+              id="mobile-menu-btn"
+              class="text-sweet-dark hover:text-sweet-brown focus:outline-none p-2"
+            >
+              <i class="fas fa-bars text-2xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-sweet-cream border-b border-sweet-brown/10 absolute w-full shadow-lg"
+      >
+        <div class="px-4 pt-2 pb-6 space-y-1 text-center">
+          <a
+            href="#home"
+            class="block px-3 py-3 text-sweet-dark font-medium hover:bg-sweet-brown/5 rounded-md"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="block px-3 py-3 text-sweet-dark font-medium hover:bg-sweet-brown/5 rounded-md"
+            >Tentang Kami</a
+          >
+          <a
+            href="#menu"
+            class="block px-3 py-3 text-sweet-dark font-medium hover:bg-sweet-brown/5 rounded-md"
+            >Menu Manis</a
+          >
+          <a
+            href="#testimoni"
+            class="block px-3 py-3 text-sweet-dark font-medium hover:bg-sweet-brown/5 rounded-md"
+            >Ulasan</a
+          >
+          <a
+            href="https://wa.me/6283894983594"
+            target="_blank"
+            class="block mt-4 bg-sweet-brown text-sweet-cream px-3 py-3 rounded-md font-medium mx-auto max-w-xs"
+          >
+            <i class="fab fa-whatsapp mr-2"></i> Pesan Sekarang
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <section
+      id="home"
+      class="pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden relative"
+    >
+      <div
+        class="absolute top-20 left-[-5%] w-64 h-64 bg-sweet-accent/20 rounded-full blur-3xl -z-10"
+      ></div>
+      <div
+        class="absolute bottom-0 right-[-10%] w-80 h-80 bg-sweet-brown/10 rounded-full blur-3xl -z-10"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="text-center md:text-left z-10">
+            <span
+              class="text-sweet-accent font-semibold tracking-wider uppercase text-sm mb-4 block"
+              >Bake with Love</span
+            >
+            <h1
+              class="text-4xl md:text-5xl lg:text-6xl font-bold font-serif text-sweet-dark leading-tight mb-6"
+            >
+              Setiap Gigitan,<br />
+              <span class="text-sweet-brown italic">Cerita Manis</span><br />
+              Untuk Anda
+            </h1>
+            <p class="text-lg text-gray-600 mb-8 max-w-lg mx-auto md:mx-0">
+              Kami menyajikan aneka kue dan dessert berkualitas premium,
+              "Freshly made for you!" dengan bahan pilihan terbaik untuk momen
+              spesial Anda.
+            </p>
+            <div
+              class="flex flex-col sm:flex-row justify-center md:justify-start gap-4"
+            >
+              <a
+                href="#menu"
+                class="bg-sweet-brown text-sweet-cream px-8 py-3.5 rounded-full font-medium hover:bg-sweet-dark transition-all shadow-lg text-center"
+              >
+                Lihat Menu
+              </a>
+              <a
+                href="https://wa.me/6283894983594"
+                target="_blank"
+                class="bg-white text-sweet-brown border border-sweet-brown px-8 py-3.5 rounded-full font-medium hover:bg-sweet-cream transition-all shadow-sm text-center flex items-center justify-center gap-2"
+              >
+                <i class="fab fa-whatsapp text-lg"></i> Hubungi Kami
+              </a>
+            </div>
+          </div>
+
+          <div class="relative z-10 mx-auto w-full max-w-md">
+            <div
+              class="relative rounded-t-full rounded-b-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/5]"
+            >
+              <img
+                src="img/Birthday Cake.jpeg"
+                alt="Birthday Cake"
+                class="object-cover w-full h-full object-center"
+                onerror="
+                  this.src =
+                    'https://placehold.co/600x750/5C3A21/F8F5F0?text=Birthday+Cake'
+                "
+              />
+            </div>
+            <div
+              class="absolute -bottom-6 -right-6 md:-right-10 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-4 border border-sweet-cream"
+            >
+              <div
+                class="bg-sweet-accent/20 w-12 h-12 rounded-full flex items-center justify-center text-sweet-brown text-xl"
+              >
+                <i class="fas fa-heart"></i>
+              </div>
+              <div>
+                <p class="font-bold text-sweet-dark font-serif text-lg">100%</p>
+                <p class="text-xs text-gray-500 uppercase tracking-wide">
+                  Dibuat dengan Cinta
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="py-16 bg-white relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16"
+        >
+          <div
+            class="w-48 h-48 md:w-56 md:h-56 flex-shrink-0 rounded-full shadow-lg bg-white overflow-hidden flex items-center justify-center border-4 border-sweet-cream"
+          >
+            <img
+              src="img/logo_mysweet-removebg-preview_2.png"
+              alt="MySweetheart Logo"
+              class="w-full h-full object-cover"
+              onerror="
+                this.src =
+                  'https://placehold.co/200x200/5C3A21/F8F5F0?text=Logo'
+              "
+            />
+          </div>
+          <div class="max-w-2xl text-center md:text-left">
+            <h2 class="text-3xl font-serif font-bold text-sweet-dark mb-4">
+              Filosofi <span class="text-sweet-brown">MySweetheart</span>
+            </h2>
+            <p class="text-gray-600 leading-relaxed">
+              Sesuai dengan semboyan kami,
+              <strong>"Freshly made for you!"</strong>, kami percaya bahwa
+              setiap kue yang keluar dari dapur kami bukan sekadar makanan
+              manis, melainkan sebuah pesan cinta. Kami hanya menggunakan bahan
+              baku premium dan resep rahasia yang disempurnakan untuk memastikan
+              senyum mengembang di setiap gigitan Anda.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="py-20 bg-sweet-cream relative">
+      <div
+        class="absolute top-40 right-0 w-72 h-72 bg-sweet-accent/10 rounded-full blur-3xl -z-10"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <span
+            class="text-sweet-brown font-medium tracking-wider uppercase text-sm mb-2 block"
+            >Pilihan Favorit</span
+          >
+          <h2 class="text-4xl font-serif font-bold text-sweet-dark">
+            Menu <span class="text-sweet-brown italic">Manis</span> Kami
+          </h2>
+          <div class="w-24 h-1 bg-sweet-accent mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10"
+        >
+          <!-- Item 1 -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-lg menu-card border border-sweet-brown/5"
+          >
+            <div class="h-64 overflow-hidden relative">
+              <img
+                src="img/Donat.jpeg"
+                alt="Donat Aneka Glaze"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                onerror="
+                  this.src =
+                    'https://placehold.co/500x400/5C3A21/F8F5F0?text=Donat+Glaze'
+                "
+              />
+              <div
+                class="absolute top-4 right-4 bg-sweet-brown text-white text-xs font-bold px-3 py-1 rounded-full shadow-md"
+              >
+                Best Seller
+              </div>
+            </div>
+            <div class="p-6 flex flex-col h-[calc(100%-16rem)]">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-serif font-bold text-sweet-dark">
+                  Donat Aneka Glaze
+                </h3>
+                <span class="text-sweet-brown font-bold text-lg"
+                  >Rp 65.000</span
+                >
+              </div>
+              <p class="text-gray-500 text-sm mb-4 line-clamp-2 flex-grow">
+                Donat empuk dengan pilihan topping lezat: cokelat, matcha green
+                tea, dan strawberry pink yang manisnya pas.
+              </p>
+              <button
+                onclick="
+                  addToCart('Donat Aneka Glaze', 65000, 'img/Donat.jpeg')
+                "
+                class="mt-auto block w-full text-center bg-sweet-cream text-sweet-brown hover:bg-sweet-brown hover:text-white border border-sweet-brown py-2.5 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2"
+              >
+                Tambah Keranjang <i class="fas fa-cart-plus"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-lg menu-card border border-sweet-brown/5"
+          >
+            <div class="h-64 overflow-hidden relative">
+              <img
+                src="img/Brownies Birthday.jpeg"
+                alt="Brownies Custom Ultah"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                onerror="
+                  this.src =
+                    'https://placehold.co/500x400/5C3A21/F8F5F0?text=Brownies+Ultah'
+                "
+              />
+            </div>
+            <div class="p-6 flex flex-col h-[calc(100%-16rem)]">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-serif font-bold text-sweet-dark">
+                  Brownies Custom Ultah
+                </h3>
+                <span class="text-sweet-brown font-bold text-lg"
+                  >Rp 120.000</span
+                >
+              </div>
+              <p class="text-gray-500 text-sm mb-4 line-clamp-2 flex-grow">
+                Brownies fudgy spesial ulang tahun dengan tulisan custom
+                cokelat, dilengkapi topping stroberi segar dan biskuit.
+              </p>
+              <button
+                onclick="
+                  addToCart(
+                    'Brownies Custom Ultah',
+                    120000,
+                    'img/Brownies Birthday.jpeg',
+                  )
+                "
+                class="mt-auto block w-full text-center bg-sweet-cream text-sweet-brown hover:bg-sweet-brown hover:text-white border border-sweet-brown py-2.5 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2"
+              >
+                Tambah Keranjang <i class="fas fa-cart-plus"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-lg menu-card border border-sweet-brown/5"
+          >
+            <div class="h-64 overflow-hidden relative">
+              <img
+                src="img/Brownies Komplit.jpeg"
+                alt="Fudgy Brownies Premium"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                onerror="
+                  this.src =
+                    'https://placehold.co/500x400/5C3A21/F8F5F0?text=Brownies+Komplit'
+                "
+              />
+            </div>
+            <div class="p-6 flex flex-col h-[calc(100%-16rem)]">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-serif font-bold text-sweet-dark">
+                  Fudgy Brownies Premium
+                </h3>
+                <span class="text-sweet-brown font-bold text-lg"
+                  >Rp 135.000</span
+                >
+              </div>
+              <p class="text-gray-500 text-sm mb-4 line-clamp-2 flex-grow">
+                Brownies cokelat pekat dengan topping super melimpah! Full
+                stroberi, wafer cokelat, dan choco balls.
+              </p>
+              <button
+                onclick="
+                  addToCart(
+                    'Fudgy Brownies Premium',
+                    135000,
+                    'img/Brownies Komplit.jpeg',
+                  )
+                "
+                class="mt-auto block w-full text-center bg-sweet-cream text-sweet-brown hover:bg-sweet-brown hover:text-white border border-sweet-brown py-2.5 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2"
+              >
+                Tambah Keranjang <i class="fas fa-cart-plus"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-lg menu-card border border-sweet-brown/5"
+          >
+            <div class="h-64 overflow-hidden relative">
+              <img
+                src="img/Brownies kering.jpeg"
+                alt="Brownies Sekat Mix"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                onerror="
+                  this.src =
+                    'https://placehold.co/500x400/5C3A21/F8F5F0?text=Brownies+Sekat'
+                "
+              />
+            </div>
+            <div class="p-6 flex flex-col h-[calc(100%-16rem)]">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-serif font-bold text-sweet-dark">
+                  Brownies Sekat Mix
+                </h3>
+                <span class="text-sweet-brown font-bold text-lg"
+                  >Rp 95.000</span
+                >
+              </div>
+              <p class="text-gray-500 text-sm mb-4 line-clamp-2 flex-grow">
+                Satu loyang brownies potong dengan berbagai pilihan topping
+                nikmat: kacang mede, keju parut, choco chips, dan biskuit oreo.
+              </p>
+              <button
+                onclick="
+                  addToCart(
+                    'Brownies Sekat Mix',
+                    95000,
+                    'img/Brownies kering.jpeg',
+                  )
+                "
+                class="mt-auto block w-full text-center bg-sweet-cream text-sweet-brown hover:bg-sweet-brown hover:text-white border border-sweet-brown py-2.5 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2"
+              >
+                Tambah Keranjang <i class="fas fa-cart-plus"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-lg menu-card border border-sweet-brown/5"
+          >
+            <div class="h-64 overflow-hidden relative">
+              <img
+                src="img/Donat Buah.jpeg"
+                alt="Donat Buah Lumer"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                onerror="
+                  this.src =
+                    'https://placehold.co/500x400/5C3A21/F8F5F0?text=Donat+Buah'
+                "
+              />
+              <div
+                class="absolute top-4 right-4 bg-sweet-accent text-white text-xs font-bold px-3 py-1 rounded-full shadow-md"
+              >
+                New!
+              </div>
+            </div>
+            <div class="p-6 flex flex-col h-[calc(100%-16rem)]">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-serif font-bold text-sweet-dark">
+                  Donat Buah Lumer (Isi 12)
+                </h3>
+                <span class="text-sweet-brown font-bold text-lg"
+                  >Rp 85.000</span
+                >
+              </div>
+              <p class="text-gray-500 text-sm mb-4 line-clamp-2 flex-grow">
+                Donat tabur gula halus yang super lembut, dengan isian krim
+                vanilla lumer dan irisan buah kiwi serta stroberi segar.
+              </p>
+              <button
+                onclick="
+                  addToCart('Donat Buah Lumer', 85000, 'img/Donat Buah.jpeg')
+                "
+                class="mt-auto block w-full text-center bg-sweet-cream text-sweet-brown hover:bg-sweet-brown hover:text-white border border-sweet-brown py-2.5 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2"
+              >
+                Tambah Keranjang <i class="fas fa-cart-plus"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Item 6 -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-lg menu-card border border-sweet-brown/5"
+          >
+            <div class="h-64 overflow-hidden relative">
+              <img
+                src="img/WhatsApp Image 2026-10-01 at 18.40.10.jpeg"
+                alt="Dessert Box Series"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                onerror="
+                  this.src =
+                    'https://placehold.co/500x400/5C3A21/F8F5F0?text=Dessert+Box'
+                "
+              />
+            </div>
+            <div class="p-6 flex flex-col h-[calc(100%-16rem)]">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-serif font-bold text-sweet-dark">
+                  Dessert Box Series
+                </h3>
+                <span class="text-sweet-brown font-bold text-lg"
+                  >Rp 45.000</span
+                >
+              </div>
+              <p class="text-gray-500 text-sm mb-4 line-clamp-2 flex-grow">
+                Dessert box premium yang lumer di mulut. Tersedia dalam 3 varian
+                rasa: Tiramisu Cokelat, Strawberry Delight, dan Milky Cheese.
+              </p>
+              <button
+                onclick="
+                  addToCart(
+                    'Dessert Box Series',
+                    45000,
+                    'img/WhatsApp Image 2026-10-01 at 18.40.10.jpeg',
+                  )
+                "
+                class="mt-auto block w-full text-center bg-sweet-cream text-sweet-brown hover:bg-sweet-brown hover:text-white border border-sweet-brown py-2.5 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2"
+              >
+                Tambah Keranjang <i class="fas fa-cart-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimoni" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-serif font-bold text-sweet-dark mb-4">
+            Kata <span class="text-sweet-brown italic">Mereka</span>
+          </h2>
+          <p class="text-gray-500 max-w-2xl mx-auto">
+            Kebahagiaan pelanggan adalah bahan rahasia utama kami.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-sweet-cream/50 p-8 rounded-3xl relative">
+            <i
+              class="fas fa-quote-left text-4xl text-sweet-accent/30 absolute top-6 left-6"
+            ></i>
+            <div class="relative z-10 pt-4">
+              <div class="flex text-yellow-400 text-sm mb-4">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+              </div>
+              <p class="text-gray-700 italic mb-6">
+                "Kue ulang tahunnya benar-benar enak banget! Manisnya pas, gak
+                bikin eneg. Pasti bakal repeat order!"
+              </p>
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 rounded-full bg-sweet-accent/20 flex items-center justify-center text-sweet-brown font-bold font-serif"
+                >
+                  A
+                </div>
+                <div>
+                  <h4 class="font-bold text-sweet-dark text-sm">Amanda R.</h4>
+                  <p class="text-xs text-gray-500">Pelanggan Setia</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-sweet-cream/50 p-8 rounded-3xl relative">
+            <i
+              class="fas fa-quote-left text-4xl text-sweet-accent/30 absolute top-6 left-6"
+            ></i>
+            <div class="relative z-10 pt-4">
+              <div class="flex text-yellow-400 text-sm mb-4">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+              </div>
+              <p class="text-gray-700 italic mb-6">
+                "Brownies sekatnya juara! Toppingnya melimpah dan kuenya empuk
+                banget. Pengirimannya juga sangat aman."
+              </p>
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 rounded-full bg-sweet-brown/20 flex items-center justify-center text-sweet-brown font-bold font-serif"
+                >
+                  B
+                </div>
+                <div>
+                  <h4 class="font-bold text-sweet-dark text-sm">
+                    Budi Santoso
+                  </h4>
+                  <p class="text-xs text-gray-500">Pecinta Dessert</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-sweet-cream/50 p-8 rounded-3xl relative">
+            <i
+              class="fas fa-quote-left text-4xl text-sweet-accent/30 absolute top-6 left-6"
+            ></i>
+            <div class="relative z-10 pt-4">
+              <div class="flex text-yellow-400 text-sm mb-4">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star-half-alt"></i>
+              </div>
+              <p class="text-gray-700 italic mb-6">
+                "Donat buahnya cantik banget dan rasanya lumer di mulut. Sesuai
+                banget sama semboyannya Freshly made for you!"
+              </p>
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 rounded-full bg-sweet-accent/20 flex items-center justify-center text-sweet-brown font-bold font-serif"
+                >
+                  C
+                </div>
+                <div>
+                  <h4 class="font-bold text-sweet-dark text-sm">
+                    Citra Kirana
+                  </h4>
+                  <p class="text-xs text-gray-500">Event Organizer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer
+      class="bg-sweet-dark text-gray-300 py-12 border-t-4 border-sweet-brown"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 items-start text-center md:text-left"
+        >
+          <!-- Kolom 1: Brand -->
+          <div class="flex flex-col items-center md:items-start">
+            <div
+              class="bg-white rounded-full inline-flex mb-4 w-28 h-28 md:w-32 md:h-32 overflow-hidden shadow-lg items-center justify-center border-2 border-sweet-cream"
+            >
+              <img
+                src="img/logo_mysweet-removebg-preview_2.png"
+                alt="MySweetheart Logo"
+                class="w-full h-full object-cover"
+                onerror="
+                  this.src =
+                    'https://placehold.co/150x150/5C3A21/F8F5F0?text=Logo'
+                "
+              />
+            </div>
+
+            <h3 class="font-serif font-bold text-2xl text-white mb-2">
+              MySweetheart
+            </h3>
+
+            <p class="text-sm text-gray-400 max-w-xs">
+              Freshly made for you! Menyajikan hidangan manis dengan bahan
+              premium.
+            </p>
+          </div>
+
+          <!-- Kolom 2: Tautan Cepat -->
+          <div class="flex flex-col items-center md:items-start">
+            <h4 class="text-white font-serif font-bold text-lg mb-4">
+              Tautan Cepat
+            </h4>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a
+                  href="#home"
+                  class="hover:text-sweet-accent transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#menu"
+                  class="hover:text-sweet-accent transition-colors"
+                  >Daftar Menu</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#testimoni"
+                  class="hover:text-sweet-accent transition-colors"
+                  >Testimoni</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Kolom 3: Hubungi Kami -->
+          <div class="flex flex-col items-center md:items-start">
+            <h4 class="text-white font-serif font-bold text-lg mb-4">
+              Hubungi Kami
+            </h4>
+            <div class="space-y-3 mb-5 text-sm text-left">
+              <p class="flex items-start gap-3">
+                <i
+                  class="fas fa-map-marker-alt text-sweet-accent w-5 text-center mt-1"
+                ></i>
+                <span
+                  >Jl. Rusa IV No. 115, Pondok Ranji, Ciputat Timur, Tangerang
+                  Selatan, Banten 15412.</span
+                >
+              </p>
+              <p class="flex items-center gap-3">
+                <i
+                  class="fab fa-whatsapp text-sweet-accent w-5 text-center"
+                ></i>
+                <span>+62 838-9498-3594</span>
+              </p>
+            </div>
+            <div class="flex gap-3">
+              <a
+                href="https://www.instagram.com/mysweetheart_id/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-sweet-brown hover:text-white transition-all"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-sweet-brown hover:text-white transition-all"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-sweet-brown hover:text-white transition-all"
+                ><i class="fab fa-tiktok"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-800 mt-10 pt-8 text-center text-sm text-gray-500"
+        >
+          <p>
+            &copy; <span id="year"></span> MySweetheart. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Cart Overlay & Sidebar -->
+    <div
+      id="cart-overlay"
+      class="fixed inset-0 bg-black/50 z-[60] hidden opacity-0 transition-opacity duration-300"
+      onclick="toggleCart()"
+    ></div>
+    <div
+      id="cart-sidebar"
+      class="fixed top-0 right-0 w-full md:w-96 h-full bg-white z-[70] transform translate-x-full transition-transform duration-300 shadow-2xl flex flex-col"
+    >
+      <div
+        class="p-6 border-b border-sweet-brown/10 flex justify-between items-center bg-sweet-cream"
+      >
+        <h2 class="text-2xl font-serif font-bold text-sweet-dark">
+          <i class="fas fa-shopping-cart text-sweet-brown mr-2"></i> Keranjang
+          Manis
+        </h2>
+        <button
+          onclick="toggleCart()"
+          class="text-gray-400 hover:text-sweet-dark text-xl p-2"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div class="flex-1 overflow-y-auto p-6 space-y-6" id="cart-items"></div>
+
+      <div
+        id="cart-empty"
+        class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none mt-16"
+      >
+        <i class="fas fa-box-open text-6xl text-sweet-brown/20 mb-4"></i>
+        <p class="text-gray-500 font-medium">Keranjang masih kosong</p>
+        <p class="text-sm text-gray-400 mt-1">
+          Yuk, pilih menu manis favoritmu!
+        </p>
+      </div>
+
+      <div
+        id="cart-footer"
+        class="p-6 border-t border-sweet-brown/10 bg-gray-50 hidden"
+      >
+        <div class="flex justify-between items-center mb-4">
+          <span class="text-gray-600 font-medium">Total Harga:</span>
+          <span id="cart-subtotal" class="text-xl font-bold text-sweet-brown"
+            >Rp 0</span
+          >
+        </div>
+        <button
+          onclick="togglePaymentModal()"
+          class="w-full bg-sweet-brown text-white py-3.5 rounded-xl font-bold hover:bg-sweet-dark transition-all shadow-lg flex justify-center items-center gap-2"
+        >
+          Lanjut ke Pembayaran <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div
+      id="payment-modal"
+      class="fixed inset-0 z-[80] hidden flex items-center justify-center p-4"
+    >
+      <div
+        class="absolute inset-0 bg-black/60 backdrop-blur-sm"
+        onclick="togglePaymentModal()"
+      ></div>
+      <div
+        class="bg-white rounded-3xl shadow-2xl w-full max-w-lg relative z-10 overflow-hidden flex flex-col max-h-[90vh]"
+      >
+        <div
+          class="bg-sweet-cream p-5 border-b border-sweet-brown/10 flex justify-between items-center"
+        >
+          <h3 class="text-xl font-serif font-bold text-sweet-dark">
+            Detail Pemesanan
+          </h3>
+          <button
+            onclick="togglePaymentModal()"
+            class="text-gray-400 hover:text-sweet-dark text-xl p-2"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <div class="p-6 overflow-y-auto">
+          <form id="checkout-form" onsubmit="processCheckout(event)">
+            <h4
+              class="font-bold text-sweet-brown mb-3 text-sm uppercase tracking-wider"
+            >
+              Informasi Pengiriman
+            </h4>
+            <div class="space-y-4 mb-6">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Nama Lengkap</label
+                >
+                <input
+                  type="text"
+                  id="checkout-nama"
+                  required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sweet-brown outline-none"
+                  placeholder="Contoh: Sarah Aulia"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Alamat Lengkap</label
+                >
+                <textarea
+                  id="checkout-alamat"
+                  required
+                  rows="2"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sweet-brown outline-none"
+                  placeholder="Nama Jalan, RT/RW, Patokan..."
+                ></textarea>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Catatan Tambahan (Opsional)</label
+                >
+                <input
+                  type="text"
+                  id="checkout-catatan"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sweet-brown outline-none"
+                  placeholder="Contoh: Lilin ultah angka 5..."
+                />
+              </div>
+            </div>
+
+            <div
+              class="bg-sweet-cream/50 p-4 rounded-xl flex justify-between items-center mb-6 border border-sweet-brown/10"
+            >
+              <span class="text-gray-700 font-medium">Total Tagihan:</span>
+              <span
+                id="payment-total"
+                class="text-2xl font-bold text-sweet-brown"
+                >Rp 0</span
+              >
+            </div>
+
+            <button
+              type="submit"
+              class="w-full bg-[#25D366] text-white py-3.5 rounded-xl font-bold hover:bg-[#128C7E] transition-all shadow-lg flex justify-center items-center gap-2"
+            >
+              <i class="fab fa-whatsapp text-xl"></i> Kirim Pesanan via WhatsApp
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a
+      href="https://wa.me/6283894983594?text=Halo%20MySweetheart,%20saya%20tertarik%20untuk%20pesan%20kue..."
+      target="_blank"
+      class="fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-lg z-50 btn-whatsapp-floating hover:bg-[#128C7E] transition-colors"
+      title="Hubungi kami via WhatsApp"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+  </body>
+</html>
