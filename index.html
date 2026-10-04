@@ -549,19 +549,33 @@
       </div>
     </section>
 
-    <section id="testimoni" class="py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
+    <section id="testimoni" class="py-20 bg-white overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+        <div class="text-center">
           <h2 class="text-4xl font-serif font-bold text-sweet-dark mb-4">
             Kata <span class="text-sweet-brown italic">Mereka</span>
           </h2>
-          <p class="text-gray-500 max-w-2xl mx-auto">
+          <p class="text-gray-500 max-w-2xl mx-auto mb-8">
             Kebahagiaan pelanggan adalah bahan rahasia utama kami.
           </p>
+          <!-- Ganti link di bawah dengan link Google Form Anda -->
+          <a
+            href="https://forms.google.com/..."
+            target="_blank"
+            class="inline-flex items-center gap-2 bg-sweet-brown text-sweet-cream px-6 py-3 rounded-full font-medium hover:bg-sweet-dark transition-all shadow-md"
+          >
+            <i class="fas fa-star text-yellow-400"></i> Tulis Ulasan Anda
+          </a>
         </div>
+      </div>
 
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="bg-sweet-cream/50 p-8 rounded-3xl relative">
+      <!-- Area Animasi Berjalan -->
+      <div class="w-full relative py-4">
+        <div class="animate-marquee gap-8 px-4">
+          <!-- KARTU 1 -->
+          <div
+            class="bg-sweet-cream/50 p-8 rounded-3xl relative testimonial-card flex-shrink-0"
+          >
             <i
               class="fas fa-quote-left text-4xl text-sweet-accent/30 absolute top-6 left-6"
             ></i>
@@ -589,7 +603,10 @@
             </div>
           </div>
 
-          <div class="bg-sweet-cream/50 p-8 rounded-3xl relative">
+          <!-- KARTU 2 -->
+          <div
+            class="bg-sweet-cream/50 p-8 rounded-3xl relative testimonial-card flex-shrink-0"
+          >
             <i
               class="fas fa-quote-left text-4xl text-sweet-accent/30 absolute top-6 left-6"
             ></i>
@@ -619,7 +636,107 @@
             </div>
           </div>
 
-          <div class="bg-sweet-cream/50 p-8 rounded-3xl relative">
+          <!-- KARTU 3 -->
+          <div
+            class="bg-sweet-cream/50 p-8 rounded-3xl relative testimonial-card flex-shrink-0"
+          >
+            <i
+              class="fas fa-quote-left text-4xl text-sweet-accent/30 absolute top-6 left-6"
+            ></i>
+            <div class="relative z-10 pt-4">
+              <div class="flex text-yellow-400 text-sm mb-4">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star-half-alt"></i>
+              </div>
+              <p class="text-gray-700 italic mb-6">
+                "Donat buahnya cantik banget dan rasanya lumer di mulut. Sesuai
+                banget sama semboyannya Freshly made for you!"
+              </p>
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 rounded-full bg-sweet-accent/20 flex items-center justify-center text-sweet-brown font-bold font-serif"
+                >
+                  C
+                </div>
+                <div>
+                  <h4 class="font-bold text-sweet-dark text-sm">
+                    Citra Kirana
+                  </h4>
+                  <p class="text-xs text-gray-500">Event Organizer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DUPLIKAT KARTU 1 (Agar putaran animasi tidak terputus) -->
+          <div
+            class="bg-sweet-cream/50 p-8 rounded-3xl relative testimonial-card flex-shrink-0"
+          >
+            <i
+              class="fas fa-quote-left text-4xl text-sweet-accent/30 absolute top-6 left-6"
+            ></i>
+            <div class="relative z-10 pt-4">
+              <div class="flex text-yellow-400 text-sm mb-4">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+              </div>
+              <p class="text-gray-700 italic mb-6">
+                "Kue ulang tahunnya benar-benar enak banget! Manisnya pas, gak
+                bikin eneg. Pasti bakal repeat order!"
+              </p>
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 rounded-full bg-sweet-accent/20 flex items-center justify-center text-sweet-brown font-bold font-serif"
+                >
+                  A
+                </div>
+                <div>
+                  <h4 class="font-bold text-sweet-dark text-sm">Amanda R.</h4>
+                  <p class="text-xs text-gray-500">Pelanggan Setia</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DUPLIKAT KARTU 2 -->
+          <div
+            class="bg-sweet-cream/50 p-8 rounded-3xl relative testimonial-card flex-shrink-0"
+          >
+            <i
+              class="fas fa-quote-left text-4xl text-sweet-accent/30 absolute top-6 left-6"
+            ></i>
+            <div class="relative z-10 pt-4">
+              <div class="flex text-yellow-400 text-sm mb-4">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+              </div>
+              <p class="text-gray-700 italic mb-6">
+                "Brownies sekatnya juara! Toppingnya melimpah dan kuenya empuk
+                banget. Pengirimannya juga sangat aman."
+              </p>
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 rounded-full bg-sweet-brown/20 flex items-center justify-center text-sweet-brown font-bold font-serif"
+                >
+                  B
+                </div>
+                <div>
+                  <h4 class="font-bold text-sweet-dark text-sm">
+                    Budi Santoso
+                  </h4>
+                  <p class="text-xs text-gray-500">Pecinta Dessert</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DUPLIKAT KARTU 3 -->
+          <div
+            class="bg-sweet-cream/50 p-8 rounded-3xl relative testimonial-card flex-shrink-0"
+          >
             <i
               class="fas fa-quote-left text-4xl text-sweet-accent/30 absolute top-6 left-6"
             ></i>
